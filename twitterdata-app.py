@@ -6,9 +6,6 @@ for i,tweet in enumerate(sntwitter.TwitterSearchScraper('elonmusk').get_items())
         break
     tweets_list1.append([tweet.date, tweet.id, tweet.url, tweet.content, tweet.user, tweet.replyCount, tweet.retweetCount, tweet.source, tweet.likeCount])
 tweets_df1 = pd.DataFrame (tweets_list1, columns = ['Date', 'Id','URL','Tweet_content','User','Reply_count','Retweet_count','Source','Like_count'])
-tweets_df1.to_csv ("C:\\Users\\Have a Nice Day\\OneDrive\\Desktop\\newfile.csv")
-tweets_df1 = pd.read_csv ("C:\\Users\\Have a Nice Day\\OneDrive\\Desktop\\newfile.csv")
-print (tweets_df1)
 import streamlit as st
 st.write ('Twitter_data')
 title = st.text_input('Search data by keyword')
